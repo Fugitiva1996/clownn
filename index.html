@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hydra Exhibition</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-sun-sky@3.0.3/dist/aframe-sun-sky.min.js"></script>
+    <script src="https://unpkg.com/hydra-synth"></script>
+  </head>
+
+  <body>
+    <a-scene
+      id="scene"
+      background="color: #729ea1"
+      vr-mode-ui="enabled: true"
+      aframe-init=""
+      renderer="colorManagement: true"
+    >
+      <a-assets></a-assets>
+      <a-sun-sky
+        id="sunsky"
+        material="sunPosition: -2 2.5 0; side: back"
+        geometry=""
+        scale=""
+      ></a-sun-sky>
+
+      <a-box geometry="primitive: box; width: 2; height: 2; depth: 1" position="0 1.5 -3" rotation="0 45 0"></a-box>
+      <a-entity light="type: ambient; color: #DDD; intensity: .9"></a-entity>
+      <a-entity
+        light="type: directional; color: #DDD; intensity: .1"
+        position="-0.5 1 1"
+      ></a-entity>
+      <a-entity
+        id="acamera"
+        camera
+        wasd-controls="acceleration: 100"
+        rotation
+        look-controls
+        position="0 1.5 1"
+      >
+      </a-entity>
+    </a-scene>
+    <script src="index.js"></script>
+  </body>
+</html>
